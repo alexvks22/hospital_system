@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset="UTF-8">
+<title>Menu</title>
+<style>
+
+body
+{
+
+font-family:Verdana;
+background-image:url(back2.jpg);
+background-repeat:no-repeat;
+background-size: cover;
+background-attachment: fixed;
+
+}
+
+.content
+{
+margin:0 auto;
+width:30%;
+text-align:center;
+}
+
+.center
+{
+text-align:center;}
+
+
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-family:Verdana;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #105387;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #0066ff}
+
+.button:active {
+  background-color: #0066ff;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+</style>
+</head>
+
+<body>
+
+<h1 class="center">Welcome to JAppointments!</h1>
+<br>
+<h3 class="center">Choose your login type:</h3>
+ <div class="content">
+<br><br>
+<!-- <img src="https://4.bp.blogspot.com/-7P1cvnN0bvc/V3DHrv3ZwOI/AAAAAAAAGQk/qlEZ5o6GKDcCgryiVA37ext9iU1YOhcOgCLcB/s1600/Doctor%2Bappointment%2Bscript.png"/>
+ -->
+ <br /><br />
+ <input type=button onClick="parent.location='/Java_dyn_project/adminlog.html'" value='Admin Login' class="button">
+ <br>
+ <br>
+ <input type=button onClick="parent.location='/Java_dyn_project/patientlog.html'" value='Patient Login' class="button">
+ <br>
+ <br>
+ <input type=button onClick="parent.location='/Java_dyn_project/doctorlog.html'" value='Doctor Login' class="button">
+ <br />
+ <br>
+ 
+ 
+ </div>
+ 
+</body>
+</html>

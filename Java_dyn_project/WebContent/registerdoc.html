@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Register of Doctor</title>
+<style>
+
+body 
+{
+font-family:Verdana;
+
+background-image:url(back2.jpg);
+}
+
+fieldset {
+background-color:white;
+width:400px;
+}
+
+
+</style>
+</head>
+<body style="background-color:#5992BF;">
+<form action="/Java_dyn_project/registerdocservlet" method="post">
+       <fieldset>
+            <legend><b> Information of doctor </b></legend>
+            <table>
+                <tr>
+                    <td>Doctor AMKA</td>
+                    <td><input type="number" name="doctorAMKA" required="required" /></td>
+                </tr>
+                <tr>
+                    <td>Username</td>
+                    <td><input type="email" name="usernamedoc" required="required" /></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="passdoc" required="required" /></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="namedoc" required="required" /></td>
+                </tr>
+                <tr>
+                    <td>Surname</td>
+                    <td><input type="text" name="surnamedoc" required="required" /></td>
+                </tr>
+                <tr>
+                    <td>Specialty</td>
+                    <td>
+	                    <select required="required" name="specialty">
+	                    	<option value="">None</option>
+	                    	<option value="1">Accident and emergency (A&E)</option>
+	    					<option value="2">Cardiology</option>
+	    					<option value="3">Gastroenterology</option>
+	    					<option value="4">General Surgery</option>
+	    					<option value="5">Nephrology</option>
+	    					<option value="6">Neurology</option>
+	    					<option value="7">Oncology</option>
+	    					<option value="8">Ophthalmology</option>
+	    					<option value="9">Orthopaedics</option>
+	    					<option value="10">Physiotherapy</option>
+	    					<option value="11">Occupational Therapy</option>
+	    					<option value="12">Radiotherapy</option>
+	    					<option value="13">Urology</option>
+	    					<option value="14">Gynecology</option>
+	    					<option value="15">Breast Screening</option>
+	    				</select>
+    				</td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit" /></td>
+                </tr>
+            </table>
+        </fieldset><br><br>
+             <input type=button onClick="parent.location='/Java_dyn_project/index.html'" value='Menu'>
+    </form>
+    </center>
+</body>
+</html>

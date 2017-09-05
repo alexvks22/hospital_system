@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Register of Patient</title>
+<style>
+body 
+{
+font-family:Verdana;
+
+background-image:url(back2.jpg);
+}
+
+fieldset {
+background-color:white;
+width:400px;
+}
+
+</style>
+</head>
+<body style="background-color:#5992BF;">
+<form action="/Java_dyn_project/registerpatservlet" method="post">
+        <fieldset style="width: 400px;background-color:white;">
+            <legend><b> Information of patient </b></legend>
+            <table>
+                <tr>
+                    <td>Patient AMKA</td>
+                    <td><input type="number" name="patientAMKA" required="required" /></td>
+                </tr>
+                <tr>
+                    <td>Userid</td>
+                    <td><input type="email" name="useridpat" required="required" /></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="userpaspat" required="required" /></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="namepat" required="required" /></td>
+                </tr>
+                <tr>
+                    <td>Surname</td>
+                    <td><input type="text" name="surnamepat" required="required" /></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>
+	                    <select required="required" name="gender">
+	                    	<option value="">None</option>
+	                    	<option value="Male">Male</option>
+	    					<option value="Female">Female</option>
+	    				</select>
+    				</td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit" name="button"/></td>
+                </tr>
+            </table>
+        </fieldset><br><br>
+             <input type=button onClick="parent.location='/Java_dyn_project/index.html'" value='Menu'>
+    </form>
+</body>
+</html>

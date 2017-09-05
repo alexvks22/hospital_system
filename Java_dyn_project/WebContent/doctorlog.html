@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Doctor Login</title>
+<style>
+
+body 
+{
+font-family:Verdana;
+
+background-image:url(back2.jpg);
+background-repeat:no-repeat;
+background-size: cover;
+background-attachment: fixed;
+}
+
+
+fieldset {
+background-color:white;
+width:300px;
+}
+
+a {
+color: blue;
+}
+
+
+a: link, a:visited {
+color:blue;}
+
+
+a:hover {
+color:black;}
+
+</style>
+</head>
+<body style="background-color:#5992BF;">
+<center><br><br><br><br><br><br><br><br><br><br><br><br>
+	 <form action="/Java_dyn_project/doctorservlet" method="post">
+        <fieldset style="width: 300px;background-color:white;">
+            <legend><b>Login to JAppointments</b></legend>
+            <table>
+                <tr>
+                    <td>User ID</td>
+                    <td><input type="text" name="username" required="required" /></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="userpass" required="required" /></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Login" /></td>
+                </tr>
+            </table>
+        </fieldset><br>
+        <p>Not a member yet?<br><a href="/Java_dyn_project/registerdoc.html">Register</a></p>
+             <input type=button onClick="parent.location='/Java_dyn_project/index.html'" value='Menu'>
+    </form></center>
+</body>
+</html>
