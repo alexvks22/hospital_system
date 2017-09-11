@@ -9,10 +9,10 @@ In order that everything works fine:
 2)Install Tomcat 8.0 server
 3)Modify context.xml file of your Tomcat Server, inserting text like this:
 
-<Resource auth="Container" driverClassName="org.postgresql.Driver" maxActive="8" 
+<//Resource auth="Container" driverClassName="org.postgresql.Driver" maxActive="8" 
 name="jdbc/LiveDataSource" password="" type="javax.sql.DataSource"
 url="jdbc:postgresql://localhost:5432/JavaProject" username="">
-</Resource>
+<//Resource>
 
 4)Import postgresql.jar in Eclipse or whatever program you may use to execute,
 5)In Patient/Doctor/Admin/Appointment java files you must enter your username and password of your Postgres account
