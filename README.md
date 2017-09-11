@@ -11,7 +11,7 @@ In order that everything works fine:
 
 <//Resource auth="Container" driverClassName="org.postgresql.Driver" maxActive="8" 
 name="jdbc/LiveDataSource" password="" type="javax.sql.DataSource"
-url="jdbc:postgresql://localhost:5432/JavaProject" username="">
+url="jdbc:postgresql://localhost:port/name_of_database" username="">
 <//Resource>
 
 4)Import postgresql.jar in Eclipse or whatever program you may use to execute,
