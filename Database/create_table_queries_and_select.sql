@@ -1,37 +1,11 @@
-﻿DROP TABLE IF EXISTS pending;
-CREATE TABLE pending
-(
-doctorAMKA bigint NOT NULL,
+﻿
+CREATE TABLE admin
+( ID serial NOT NULL,
 username varchar NOT NULL,
 password varchar NOT NULL,
 name varchar NOT NULL,
 surname varchar NOT NULL,
-specialty integer NOT NULL,
-PRIMARY KEY (doctorAMKA)
-);
-
-DROP TABLE IF EXISTS pending_pat;
-CREATE TABLE pending_pat
-(
-patientAMKA bigint NOT NULL,
-userid varchar NOT NULL,
-password varchar NOT NULL,
-name varchar NOT NULL,
-surname varchar NOT NULL,
-gender varchar NOT NULL,
-PRIMARY KEY (patientAMKA)
-);
-
-DROP TABLE IF EXISTS patient;
-CREATE TABLE patient
-(
-patientAMKA bigint NOT NULL,
-userid varchar NOT NULL,
-password varchar NOT NULL,
-name varchar NOT NULL,
-surname varchar NOT NULL,
-gender varchar NOT NULL,
-PRIMARY KEY (patientAMKA)
+PRIMARY KEY(username) 
 );
 
 DROP TABLE IF EXISTS drugs;
@@ -51,6 +25,19 @@ name varchar NOT NULL,
 PRIMARY KEY (ID)
 );
 
+DROP TABLE IF EXISTS patient;
+CREATE TABLE patient
+(
+patientAMKA bigint NOT NULL,
+userid varchar NOT NULL,
+password varchar NOT NULL,
+name varchar NOT NULL,
+surname varchar NOT NULL,
+gender varchar NOT NULL,
+PRIMARY KEY (patientAMKA)
+);
+
+
 DROP TABLE IF EXISTS medical_folder;
 CREATE TABLE medical_folder(
 ID serial NOT NULL,
@@ -60,15 +47,6 @@ drug_id serial NOT NULL,
 PRIMARY KEY (ID),
 FOREIGN KEY (drug_id) references drugs(ID),
 FOREIGN KEY (patient) references patient(patientAMKA)
-);
-
-CREATE TABLE admin
-( ID serial NOT NULL,
-username varchar NOT NULL,
-password varchar NOT NULL,
-name varchar NOT NULL,
-surname varchar NOT NULL,
-PRIMARY KEY(username) 
 );
 
 
@@ -95,3 +73,38 @@ PRIMARY KEY (ID),
 FOREIGN KEY (patientAMKA) references patient(patientAMKA),
 FOREIGN KEY (doctorAMKA) references doctor(doctorAMKA)
 );
+
+DROP TABLE IF EXISTS pending_pat;
+CREATE TABLE pending_pat
+(
+patientAMKA bigint NOT NULL,
+userid varchar NOT NULL,
+password varchar NOT NULL,
+name varchar NOT NULL,
+surname varchar NOT NULL,
+gender varchar NOT NULL,
+PRIMARY KEY (patientAMKA)
+);
+
+DROP TABLE IF EXISTS pending;
+CREATE TABLE pending
+(
+doctorAMKA bigint NOT NULL,
+username varchar NOT NULL,
+password varchar NOT NULL,
+name varchar NOT NULL,
+surname varchar NOT NULL,
+specialty integer NOT NULL,
+PRIMARY KEY (doctorAMKA)
+);
+
+
+
+select * from patient;
+select * from doctor;
+select * from appointments;
+select * from departments;
+select * from drugs;
+select * from medical_folder;
+select * from admin;
+select * from pending;
