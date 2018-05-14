@@ -66,7 +66,7 @@ public class PatientServlet extends HttpServlet {
 	  PrintWriter out = response.getWriter();  
 	  out.println("<html>");
 	  out.println("<head></head>");
-	  out.println("<body style='background-color:#5992BF;'>");
+	  out.println("<body style='background-color:#81F7F3;'>");
         String n=request.getParameter("username");  
         String p=request.getParameter("userpass"); 
 
