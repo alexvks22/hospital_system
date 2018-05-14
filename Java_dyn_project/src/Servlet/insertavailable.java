@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
-import ask_1.src.lab_ask1.Patient;
+import ask_1.src.lab_ask1.Database_Helper;
 /**
  * Servlet implementation class insertavailable
  */
@@ -64,7 +64,7 @@ public class insertavailable extends HttpServlet {
 		//out.println(d);
 		String[] ids=request.getParameterValues("time");
 		
-		Connection conn = Patient.establish_connection();
+		Connection conn = Database_Helper.establish_connection();
 
         PreparedStatement pst = null;
         ResultSet rs = null;
