@@ -65,10 +65,10 @@ font-family:Verdana;
 }
 
 a {
-color: blue;
+color: #088A85;
 }
 a: link, a:visited {
-color:blue;}
+color:#088A85;}
 a:hover {
 color:black;}
 
@@ -107,7 +107,7 @@ display:none;}
 
 /* Change the link color to #111 (black) on hover */
 .a_menu:hover {
-    background-color:#5992BF ;
+    background-color:#18A99C ;
       cursor: pointer;
        background-size: 150% 150%;
       
@@ -117,7 +117,7 @@ display:none;}
 </style>
 
 </head>
-<body style="background-color: #5992BF;">
+<body style="background-color:  #81F7F3;">
 	
 	<ul id="menu_bar">
 	<li class="menu_bar"> <a href="../index.html" class="a_menu">Menu</a> </li>
@@ -126,7 +126,8 @@ display:none;}
 	     </li>
 	</ul>
 	    
-	    <%@page import = "ask_1.src.lab_ask1.Patient" %>
+	    <%@page import = "ask_1.src.lab_ask1.Database_Helper"
+	    		import = "ask_1.src.lab_ask1.Patient" %>
 	    
 	    
         
@@ -154,7 +155,7 @@ display:none;}
 		        <%@ page import = "java.sql.*" %>
        <%
         try {
-        	conn = Patient.establish_connection();
+        	conn = Database_Helper.establish_connection();
         	s=conn.createStatement();
     		//ResultSet rst=s.executeQuery("select * from patient where userid='"+n+"' and password='"+p+"'");
            	rst=s.executeQuery("select * from patient where userid='"+session.getAttribute("username")+"'");

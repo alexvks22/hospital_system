@@ -86,10 +86,10 @@ font-family:Verdana;
 }
 
 a {
-color: blue;
+color: #088A85;
 }
 a: link, a:visited {
-color:blue;}
+color:#088A85;}
 a:hover {
 color:black;}
 
@@ -124,7 +124,7 @@ color:black;}
 
 /* Change the link color to #111 (black) on hover */
 .a_menu:hover {
-    background-color:#5992BF ;
+    background-color:#18A99C ;
       cursor: pointer;
        background-size: 150% 150%;
       
@@ -135,7 +135,7 @@ color:black;}
 </style>
 
 </head>
-<body style="background-color: #5992BF;">
+<body style="background-color: #81F7F3;">
 	
 	<ul id="menu_bar">
 	<li class="menu_bar"> <a href="../index.html" class="a_menu">Menu</a> </li>
@@ -144,7 +144,7 @@ color:black;}
 	     </li>
 	</ul>   
         
-        <%@page import = "ask_1.src.lab_ask1.Admin" %>
+        <%@page import = "ask_1.src.lab_ask1.Database_Helper" %>
         
         
 	  <% Connection conn = null;
@@ -175,7 +175,7 @@ color:black;}
         
        <%
         try {
-        	conn =  Admin.establish_connection();  
+        	conn =  Database_Helper.establish_connection();  
         	 s=conn.createStatement();
     		//ResultSet rst=s.executeQuery("select * from admin where username='"+n+"' and password='"+p+"'");
     		rst=s.executeQuery("select * from admin where username='"+username+"'");
@@ -206,12 +206,20 @@ color:black;}
             <%
         }
     %>
+    
+            
         <br> 
+        
+    <ul style="list-style-type: square">
+    	            <li><a href="#" onclick='show(1)'>Insert New Doctor</a></li>
+    	           
+    	        </ul>
+        
         <%! int count = 0; %>
         <%
         try {
 
-        	conn =  Admin.establish_connection(); 
+        	conn =  Database_Helper.establish_connection(); 
     		s=conn.createStatement();
     		rst=s.executeQuery("select count(*) from pending");
            	
@@ -232,11 +240,7 @@ color:black;}
     	        <p> Pending Doctor Registrations : <%= count %> </p>
     	            	<% } %>
     	           
-    	           <ul style="list-style-type: square">
-    	            <li><a href="#" onclick='show(1)'>Insert New Doctor</a></li>
     	           
-    	        </ul>
-    	        
     	  
         	  <div id="table1" style="display: none"> 
         	  <form action="../insertservlet" method="POST" id="tesy">      
@@ -281,6 +285,11 @@ color:black;}
            </div>
            <br>
            
+           <ul style="list-style-type: square">
+    	        <li><a href="#" onclick='show(2)'>Insert request of New Patient</a></li>
+    	             
+    	        </ul>
+           
            
     		 <% 
     		 rst = s.executeQuery ("select count(*) from pending_pat");
@@ -302,10 +311,7 @@ color:black;}
 
 			<% } %>
 			
-			 <ul style="list-style-type: square">
-    	        <li><a href="#" onclick='show(2)'>Insert request of New Patient</a></li>
-    	             
-    	        </ul>
+			 
 				
 			<div id="table2" style="display: none">  
 			<form action="../insertservlet" method="POST" id="tesy1">   
@@ -349,6 +355,14 @@ color:black;}
 			</form>
 			 </div>
             <br>
+            
+            <ul style="list-style-type: square">
+    	            <li><a href="#" onclick='show(3)'>Delete Doctor</a></li>
+    	            
+    	        </ul>
+				
+				
+				
         	<% rst = s.executeQuery ("select count(*) from doctor");
 
 		while (rst.next()) {
@@ -367,11 +381,7 @@ color:black;}
 
 	<% } %>
 
-	  <ul style="list-style-type: square">
-    	            <li><a href="#" onclick='show(3)'>Delete Doctor</a></li>
-    	            
-    	        </ul>
-				
+	  
 		<form action="../insertservlet" method="POST" id="tesy2">  
 		 <div id="table3" style="display: none">     
  
