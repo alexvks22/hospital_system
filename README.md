@@ -23,7 +23,7 @@ url="jdbc:postgresql://localhost:port/name_of_database" username="">
 8)(Optional) Connect your database via Data source explorer 
 
 It's urge that you encrypt your data in your database.
-The Data given are fake because of our need to get in contact with a lot of data.
+The Data given are fake because of our need to get in contact with plenty of data.
 
 This project has been created with two other fellow students, due to our Undergraduate program in University of Piraeus - Department of 
 Informatics, on the lesson "Web-based Programming".
