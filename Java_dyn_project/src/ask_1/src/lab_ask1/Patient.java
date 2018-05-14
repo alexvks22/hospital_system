@@ -12,31 +12,14 @@ import org.postgresql.util.PSQLException;
 
 import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 
-public class Patient {
+public class Patient  extends Database_Helper {
 	
 	public static String department_name;
 
 	public static long doctorAMKA;
 	
 	
-	public static Connection establish_connection () {
-	    Connection conn = null;
-        String url = "jdbc:postgresql://localhost:5432/";
-        String dbName = "JavaProject";
-        String driver = "org.postgresql.Driver";
-        String userName = "";
-        String password = "";
-        
-        try {Class.forName(driver).newInstance();
-        conn = DriverManager
-                .getConnection(url + dbName, userName, password);
-        }
-        catch(Exception e)
-        {
-        	System.out.println(e.toString());
-        }
-        return conn;
-	}
+
 	
 	public static boolean check(long patientAmka, String useid) {
 		boolean status = false;
