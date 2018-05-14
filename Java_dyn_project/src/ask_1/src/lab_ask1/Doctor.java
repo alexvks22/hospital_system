@@ -7,26 +7,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Doctor {
+public class Doctor  extends Database_Helper {
 
-	public static Connection establish_connection () {
-	    Connection conn = null;
-        String url = "jdbc:postgresql://localhost:5432/";
-        String dbName = "JavaProject";
-        String driver = "org.postgresql.Driver";
-        String userName = "";
-        String password = "";
-        
-        try {Class.forName(driver).newInstance();
-        conn = DriverManager
-                .getConnection(url + dbName, userName, password);
-        }
-        catch(Exception e)
-        {
-        	System.out.println(e.toString());
-        }
-        return conn;
-	}
 	
 	
 	public static boolean check(long doctorAMKA, String useid) {
