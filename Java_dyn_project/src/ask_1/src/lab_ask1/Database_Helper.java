@@ -10,8 +10,8 @@ public class Database_Helper {
         String url = "jdbc:postgresql://localhost:5432/";
         String dbName = "JavaProject";
         String driver = "org.postgresql.Driver";
-        String userName = "";
-        String password = "";
+        String userName = "postgres";
+        String password = "pliroforiki2018";
         
         try {Class.forName(driver).newInstance();
         conn = DriverManager

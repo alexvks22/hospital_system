@@ -6,6 +6,7 @@ package ask_1.src.lab_ask1;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 /**
  * @author p15013
@@ -39,6 +40,24 @@ public class Appointment  extends Database_Helper {
         {
         	System.out.println(e);
         }
+        finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (pst != null) {
+                try {
+                    pst.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            
+            }
+        
 		
 	}
 	public static void update(long amka, String t, String condition)
@@ -80,6 +99,24 @@ public class Appointment  extends Database_Helper {
         {
         	//System.out.println(e.toString());
         }
+        finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (pst != null) {
+                try {
+                    pst.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            
+            	}
+        
        
 		
 	}

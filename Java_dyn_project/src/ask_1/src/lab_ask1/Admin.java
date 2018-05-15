@@ -39,9 +39,26 @@ public class Admin extends Database_Helper{
         {
         	System.out.print(e.toString());
         }
+        finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (pst != null) {
+                try {
+                    pst.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            
+            }
+        }
 		
-		
-	}
+
 	
 	public static void delete(long AMKA, String delete_sql)
 	{
@@ -59,9 +76,26 @@ public class Admin extends Database_Helper{
 	        {
 	        	System.out.print(e.toString());
 	        }
+	        finally {
+	            if (conn != null) {
+	                try {
+	                    conn.close();
+	                } catch (SQLException e) {
+	                    e.printStackTrace();
+	                }
+	            }
+	            if (pst != null) {
+	                try {
+	                    pst.close();
+	                } catch (SQLException e) {
+	                    e.printStackTrace();
+	                }
+	            }
+	            
+	            }
+	        }
 			
 		
-	}
 	
 
     public static boolean validate(String name, String pass) {        
