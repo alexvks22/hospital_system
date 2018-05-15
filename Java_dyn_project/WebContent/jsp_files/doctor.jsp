@@ -190,7 +190,7 @@ color:black;}
         <br>
         <ul style="list-style-type: square">
             <li><a href="#" onclick='show(1);'">Appointments</a></li>
-           <% rst = s.executeQuery ("select count(*) from appointments where doctorAMKA="+doctorAMKA+" and t < now()");
+           <% rst = s.executeQuery ("select count(*) from appointments where doctorAMKA="+doctorAMKA+" and t < now() and patientAMKA IS NOT NULL");
             			
 								while (rst.next()) {
 									count = rst.getInt(1);
