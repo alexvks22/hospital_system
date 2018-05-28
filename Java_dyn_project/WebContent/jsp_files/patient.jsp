@@ -120,7 +120,7 @@ display:none;}
 <body style="background-color:  #81F7F3;">
 	
 	<ul id="menu_bar">
-	<li class="menu_bar"> <a href="../index.html" class="a_menu">Menu</a> </li>
+	<li class="menu_bar"> <a href="index.jsp" class="a_menu">Menu</a> </li>
 	<li>	
 	<a href="check_out_page.jsp" class="a_menu" style="float:right">Log Out</a>  <!--  style='float: right' -->   
 	     </li>
@@ -141,12 +141,23 @@ display:none;}
      	int count =0;
      	
      	
-     	
-	  	if (session.getAttribute("username") == null && session == null){
+     	String username = null;
+	  	String sessionID = null;
+	  	
+	  	if (session.getAttribute("username") == null){
 	  		response.sendRedirect("patientlog.html");
 	  	}
-	  	else
-	  		{user = (String) session.getAttribute("username");}
+	  	else user = (String) session.getAttribute("username");
+	  	
+	  	Cookie[] cookies = request.getCookies();
+	  	if (cookies != null){
+	  		for (Cookie cookie:cookies){
+	  			if(cookie.getName().equals("username")) username = cookie.getValue();
+	  			//if(cookie.getName().equals("userpass")) password = cookie.getValue();
+	  			if(cookie.getName().equals("JSESSIONID"))
+	  				sessionID = cookie.getValue();
+	  		}
+	  	}
 	  	
 	  	
 	  	

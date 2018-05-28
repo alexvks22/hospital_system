@@ -138,7 +138,7 @@ color:black;}
 <body style="background-color: #81F7F3;">
 	
 	<ul id="menu_bar">
-	<li class="menu_bar"> <a href="../index.html" class="a_menu">Menu</a> </li>
+	<li class="menu_bar"> <a href="index.jsp" class="a_menu">Menu</a> </li>
 	<li>	
 	<a href="check_out_page.jsp" class="a_menu" style="float:right">Log Out</a>  <!--  style='float: right' -->   
 	     </li>
@@ -153,13 +153,15 @@ color:black;}
    	String user = null;
    	int count =0;
    
+   	String username = null;
+  	String sessionID = null;
+  	
 	  	if (session.getAttribute("username") == null){
 	  		response.sendRedirect("adminlog.html");
 	  	}
 	  	else user = (String) session.getAttribute("username");
 	  	
-	  	String username = null;
-	  	String sessionID = null;
+	  	
 	  	Cookie[] cookies = request.getCookies();
 	  	if (cookies != null){
 	  		for (Cookie cookie:cookies){
@@ -171,6 +173,7 @@ color:black;}
 	  	}
 	   
 		%>
+		
 		  <%@ page import = "java.sql.*" %>
         
        <%
@@ -185,6 +188,7 @@ color:black;}
     		 while(rst.next()){
             %>
              <h3> Welcome <%= rst.getString("name") %> <%= rst.getString("surname") %> </h3>
+             
         <h3> Your Account Information </h3>
         <table>
        <tr> <td> Username: </td> <td> <input type='text' name='username' value='<%=rst.getString("username")%>' readonly> </td> </tr> 
