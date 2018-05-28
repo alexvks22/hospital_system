@@ -76,24 +76,26 @@ public class DoctorServlet extends HttpServlet {
 
        if(Doctor.validate(n, p)){
        	
-       	//out.println("<input type='button' onClick = parent.location='/Java_dyn_project/patientlog.html' value = 'Log out' style='float: right;'>");
-           //tha to valw st jsp arxeio ^^
-    	   HttpSession session = request.getSession();
-       	session.setAttribute("username", n);
-       	session.setMaxInactiveInterval(30*60);
-       	Cookie username = new Cookie("username", n);
-       	username.setMaxAge(30*60);
-       	response.addCookie(username);
-       	response.sendRedirect("jsp_files/doctor.jsp");
+	    	HttpSession session = request.getSession();
+	         
+       		session.setAttribute("type_of_user", "doctor");
+       		session.setAttribute("username", n);
+	       	session.setMaxInactiveInterval(30*60);
+	       	Cookie username = new Cookie("username", n);
+	       	Cookie type_of_user = new Cookie("type_of_user","doctor");
+	       	type_of_user.setMaxAge(30*60);
+	       	response.addCookie(type_of_user);
+	       	username.setMaxAge(30*60);
+	       	response.addCookie(username);
+        	
+	       	response.sendRedirect("jsp_files/doctor.jsp");
        	
        	
-      // 	RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/doctor.jsp");
-          // rd.include(request, response); 
-           
+        /*   
      	response.setHeader("Cache-Control","no-store"); 
         response.setHeader("Pragma","no-cache"); 
         response.setHeader("Expires", "0");
-         
+         */
            out.close();
            out.println("</body>");
            out.println("</html>");

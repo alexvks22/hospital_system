@@ -78,22 +78,19 @@ boolean b = false;
 	        if(Admin.validate(n, p)){
 	        	HttpSession session = request.getSession();
 	        	
+	        	session.setAttribute("type_of_user", "admin");
 	        	session.setAttribute("username", n);
 	        	session.setMaxInactiveInterval(30*60);
 	        	Cookie username = new Cookie("username", n);
+	        	Cookie type_of_user = new Cookie("type_of_user","admin");
 	        	username.setMaxAge(30*60);
+	        	type_of_user.setMaxAge(30*60);
 	        	response.addCookie(username);
-	        	response.sendRedirect("jsp_files/admin.jsp");
+	        	response.addCookie(type_of_user);
 	        	
-	        //request.getSession().setAttribute("user", n);
-	        	//response.sendRedirect("WEB-INF/admin.jsp");*/
-	        	      
-	        	//RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/admin.jsp");
-	           // rd.include(request, response); 
+	        	response.sendRedirect("jsp_files/admin.jsp");
+	
 	            
-	        	response.setHeader("Cache-Control","no-store"); 
-	            response.setHeader("Pragma","no-cache"); 
-	            response.setHeader ("Expires", "0");
 	          
 	            out.close();
 	            out.println("</body>");

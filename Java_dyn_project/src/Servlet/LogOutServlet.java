@@ -50,9 +50,10 @@ public class LogOutServlet extends HttpServlet {
 		//System.out.println("User=" + session.getAttribute("username"));
 		if (session != null && session.getAttribute("username") != null) {
 			session.invalidate();
-			response.setHeader("Cache-Control","no-cache");
+			/*response.setHeader("Cache-Control","no-cache");
 			  response.setHeader("Cache-Control","no-store");
-			  response.setDateHeader ("Expires", 0);
+			  response.setHeader("Pragm","no-cache");
+			  response.setDateHeader ("Expires", 0);*/
 			  RequestDispatcher rd=request.getRequestDispatcher("index.html");  
 	            rd.include(request,response);  
 			  
