@@ -58,7 +58,7 @@ public class InsertServlet extends HttpServlet
 	     String submit = request.getParameter("submit");
     	  String sql=null;
     	  
-	       if (submit.equals("Insert Doctor"))  //admin accepts registration of doctor
+	       if (submit.equals("Submit Doctor"))  //admin accepts registration of doctor
 	       { 
 	    	   String[] results = request.getParameterValues("test");
 

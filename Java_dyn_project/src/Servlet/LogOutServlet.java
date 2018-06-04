@@ -54,7 +54,7 @@ public class LogOutServlet extends HttpServlet {
 			  response.setHeader("Cache-Control","no-store");
 			  response.setHeader("Pragm","no-cache");
 			  response.setDateHeader ("Expires", 0);*/
-			  RequestDispatcher rd=request.getRequestDispatcher("index.html");  
+			  RequestDispatcher rd=request.getRequestDispatcher("jsp_files/index.jsp");  
 	            rd.include(request,response);  
 			  
 		}
