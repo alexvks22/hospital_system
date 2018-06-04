@@ -283,14 +283,14 @@ color:black;}
            </table>
            <br>
            <% if (count !=0) { %>
-           <input type ="submit" id="test_sub" name ="submit" value ="Insert Doctor" onclick="if(!this.form.test.checked){alert('You must select a doctor before submitting.');return false"/>
+           <input type ="submit" id="test_sub" name ="submit" value ="Submit Doctor" onclick="if(!this.form.test.checked){alert('You must select a doctor before submitting.');return false"/>
          <%} //end of if%>
         	</form>
            </div>
            <br>
            
            <ul style="list-style-type: square">
-    	        <li><a href="#" onclick='show(2)'>Insert request of New Patient</a></li>
+    	        <li><a href="#" onclick='show(2)'>Insert New Patient</a></li>
     	             
     	        </ul>
            

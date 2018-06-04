@@ -11,7 +11,7 @@ body
 {
 
 font-family:Verdana;
-background-image:url(../new.jpg);
+background-image:url(new.jpg);
 background-repeat:no-repeat;
 background-size: cover;
 background-attachment: fixed;
@@ -75,10 +75,9 @@ text-align:center;}
 	String sessionID = null;
   	String type = null;
   	
-  	if (session.getAttribute("username") == null){
-  		response.sendRedirect("index.html");
+  	if (session.getAttribute("username") != null){
+  		user = (String) session.getAttribute("username");
   	}
-  	else user = (String) session.getAttribute("username");
   	
   	if (session.getAttribute("type_of_user") != null){
   		type = (String) session.getAttribute("type_of_user");
@@ -93,16 +92,16 @@ text-align:center;}
   				sessionID = cookie.getValue();
   		}
   	} %>
-<a href="check_out_page.jsp" class="a_menu" style="float:right">Log Out</a> 
+<% if (session.getAttribute("username") != null){ %><a href="check_out_page.jsp" class="a_menu" style="float:right">Log Out</a> 
 <% if (type == "admin") {%><a href="admin.jsp" class="a_menu" style="float:left"> <%= user.toString() %> </a> <%} %>	
 <% if (type == "patient") {%><a href="patient.jsp" class="a_menu" style="float:left"> <%= user.toString() %> </a><%} %>
 <% if (type == "doctor") {%><a href="doctor.jsp" class="a_menu" style="float:left"> <%= user.toString() %> </a> <%} %>	
-
+<%} %>
 
   	<h1 class="center">Welcome to "Texnognosia" Clinic!</h1>
 <br>
 
-<h3 class="center">Choose your login type:</h3>
+<h3 class="center">Choose above:</h3>
  <div class="content">
 <br><br>
 <!-- <img src="https://4.bp.blogspot.com/-7P1cvnN0bvc/V3DHrv3ZwOI/AAAAAAAAGQk/qlEZ5o6GKDcCgryiVA37ext9iU1YOhcOgCLcB/s1600/Doctor%2Bappointment%2Bscript.png"/>
@@ -117,7 +116,9 @@ text-align:center;}
  <input type=button onClick="parent.location='/Java_dyn_project/doctorlog.html'" value='Doctor Login' class="button">
  <br />
  <br>
- 
+ <input type=button onClick="parent.location='/Java_dyn_project/register_type.html'" value='Register' class="button">
+ <br>
+ <br>
  
  </div>
 </body>

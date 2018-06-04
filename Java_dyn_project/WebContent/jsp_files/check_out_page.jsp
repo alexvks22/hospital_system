@@ -12,7 +12,7 @@ String username = null;
 //allow access only if session exists
 if(session.getAttribute("username") == null){
 
-	  response.sendRedirect("../index.html");
+	  response.sendRedirect("index.jsp");
 
 }else username = (String) session.getAttribute("username");
 String sessionID = null;

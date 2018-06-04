@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Register</title>
+
+<style>
+body
+{
+
+font-family:Verdana;
+background-image:url(new.jpg);
+background-repeat:no-repeat;
+background-size: cover;
+background-attachment: fixed;
+
+}
+
+.content
+{
+margin:0 auto;
+width:30%;
+text-align:center;
+}
+
+.center
+{
+text-align:center;}
+
+
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-family:Verdana;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color:  #088A85;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #18A99C}
+
+.button:active {
+  background-color: #18A99C;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+</style>
+
+</head>
+<body style="background-color:#81F7F3;">
+<br>
+<h3 class="center">Choose your register type:</h3>
+ <div class="content">
+<br><br>
+
+ <br /><br />
+ <input type=button onClick="parent.location='/Java_dyn_project/registerpat.html'" value='Patient' class="button">
+ <br>
+ <br>
+ <input type=button onClick="parent.location='/Java_dyn_project/registerdoc.html'" value='Doctor' class="button">
+ <br>
+ <br>
+
+ 
+ </div>
+</body>
+</html>
